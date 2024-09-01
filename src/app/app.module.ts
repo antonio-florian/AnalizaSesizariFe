@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PostResultModalComponent } from './components/post-result-modal/post-result-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     PostListComponent,
     PostDetailComponent,
     CreatePostComponent,
-    PostResultModalComponent
+    PostResultModalComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     MatDialogModule,
