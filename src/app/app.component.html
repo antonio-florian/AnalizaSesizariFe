@@ -1,6 +1,10 @@
-<nav>
-  <a routerLink="/posts">Posts</a>
-  <a routerLink="/create-post">Create Post</a>
-</nav>
-
-<router-outlet></router-outlet>
+<div class="navbar">
+  <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+  <a routerLink="/posts" routerLinkActive="active-link">Posts</a>
+  <a routerLink="/create-post" routerLinkActive="active-link">Create Post</a>
+  <a routerLink="/login" class="login-link" routerLinkActive="active-link">Login</a>
+  <button class="toggle-button" (click)="toggleDarkMode()">Toggle Dark Mode</button>
+</div>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

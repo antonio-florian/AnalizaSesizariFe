@@ -14,8 +14,8 @@ export class ApiService {
     return this.http.get(`${this.baseUrl}/posts`);
   }
 
-  getPostById(postId: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/posts/${postId}`);
+  getPostById(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/posts/${id}`);
   }
 
   getPostComments(postId: number): Observable<any> {
@@ -30,3 +30,4 @@ export class ApiService {
     return this.http.post(`${this.baseUrl}/posts/${postId}/comments`, commentData);
   }
 }
+

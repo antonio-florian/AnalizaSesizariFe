@@ -1,16 +1,15 @@
-<div>
-    <h2>{{ post.title }}</h2>
-    <p>{{ post.content }}</p>
-  
-    <h3>Comments</h3>
-    <div *ngFor="let comment of comments">
-      <p>{{ comment.content }} (Sentiment: {{ comment.sentiment }})</p>
-    </div>
-  
-    <div>
-      <h4>Add Comment</h4>
-      <textarea [(ngModel)]="newComment"></textarea>
-      <button (click)="addComment()">Add Comment</button>
-    </div>
+<div *ngIf="post" class="post-detail">
+  <h2>{{ post.title }}</h2>
+  <p>{{ post.content }}</p>
+
+  <h3>Comments</h3>
+  <div *ngFor="let comment of comments">
+    <p>{{ comment.content }} (Sentiment: {{ comment.sentiment }})</p>
   </div>
-  
+</div>
+
+<div>
+  <h4>Add Comment</h4>
+  <textarea [(ngModel)]="newComment"></textarea>
+  <button (click)="addComment()">Add Comment</button>
+</div>

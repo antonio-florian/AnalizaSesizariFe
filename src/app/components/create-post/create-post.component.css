@@ -1,0 +1,65 @@
+/* Centering and styling the Create Post card */
+.create-post {
+  background: var(--card-background);
+  padding: 20px;
+  margin: 0 auto; /* Center the card horizontally */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 800px; /* Set a max-width for the card */
+  transition: background 0.3s ease;
+}
+
+.create-post h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.create-post form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center form elements horizontally */
+}
+
+.create-post form div {
+  width: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-post label {
+  font-weight: bolder;
+  margin-bottom: 5px;
+  width: 80%;
+  text-align: left;
+}
+
+.create-post input[type="text"],
+.create-post textarea {
+  width: 80%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.create-post textarea {
+  height: 150px; /* Set a fixed height for the textarea */
+  resize: vertical; /* Allow vertical resizing only */
+}
+
+.create-post button {
+  padding: 10px 20px;
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.create-post button:hover {
+  background-color: darken(var(--button-background), 10%);
+}

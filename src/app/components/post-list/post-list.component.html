@@ -1,9 +1,8 @@
-<div>
-    <h2>Posts</h2>
-    <ul>
-      <li *ngFor="let post of posts">
-        <a [routerLink]="['/posts', post.post_id]">{{ post.title }}</a>
-      </li>
-    </ul>
-  </div>
-  
+<div class="post-list">
+  <h2>Posts</h2>
+  <ul>
+    <li *ngFor="let post of posts">
+      <a [routerLink]="['/posts', post.id]">{{ post.title }}</a>  <!-- Note: Using 'id' instead of 'post_id' -->
+    </li>
+  </ul>
+</div>
