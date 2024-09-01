@@ -1,15 +1,39 @@
-<div *ngIf="post" class="post-detail">
-  <h2>{{ post.title }}</h2>
-  <p>{{ post.content }}</p>
+<!-- Post Details -->
+<div *ngIf="post" class="post-container">
+  <div class="post-header">
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.content }}</p>
+    <p class="post-author">Posted by: {{ post.author }}</p>
+  </div>
 
-  <h3>Comments</h3>
-  <div *ngFor="let comment of comments">
-    <p>{{ comment.content }} (Sentiment: {{ comment.sentiment }})</p>
+  <!-- Show delete button if the user is the owner of the post -->
+  <div class="post-actions" *ngIf="isOwner">
+    <button (click)="deletePost(post.id)">Delete Post</button>
   </div>
 </div>
 
-<div>
+<!-- Comments Section -->
+<div class="comments-container" *ngIf="comments.length > 0">
+  <h3>Comments</h3>
+  <ul class="comments-list">
+    <li *ngFor="let comment of comments" class="comment-item">
+      <div class="comment-content">
+        <p>{{ comment.content }} (Sentiment: {{ comment.sentiment }})</p>
+      </div>
+      <div class="comment-footer">
+        <p class="comment-author">Commented by: {{ comment.author }}</p>
+        <!-- Show delete button if the user is the owner of the comment -->
+        <button *ngIf="isOwner && currentUser && currentUser.id === comment.authorId" (click)="deleteComment(comment.id)">
+          Delete Comment
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- Add New Comment -->
+<div class="add-comment-container">
   <h4>Add Comment</h4>
-  <textarea [(ngModel)]="newComment"></textarea>
+  <textarea [(ngModel)]="newComment" placeholder="Add a comment..."></textarea>
   <button (click)="addComment()">Add Comment</button>
 </div>

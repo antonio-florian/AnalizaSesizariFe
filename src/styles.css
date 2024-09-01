@@ -49,6 +49,19 @@ body {
   padding: 15px 20px;
 }
 
+/* Align links to the left */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Align login/register/toggle to the right */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
 .navbar a {
   margin-right: 15px;
   color: var(--navbar-text-color);
@@ -62,10 +75,6 @@ body {
 .navbar a.active-link {
   background-color: var(--navbar-active-color);
   color: var(--navbar-active-text-color); /* Apply active text color */
-}
-
-.navbar .login-link {
-  margin-left: auto;
 }
 
 .toggle-button {
@@ -83,6 +92,7 @@ body {
 .toggle-button:hover {
   background-color: darken(var(--button-background), 10%);
 }
+
 
 /* Other Component Styles */
 .card {
@@ -131,6 +141,105 @@ textarea {
   border: 1px solid #ccc;
   margin-bottom: 10px;
   font-size: 16px;
+}
+
+/* Align form elements centrally within the auth-container */
+.auth-container, .login-container {
+  background: var(--card-background);
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-container h2, .login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.auth-container form, .login-container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-container div, .login-container div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.auth-container label, .login-container label {
+  width: 100px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.auth-container input, .login-container input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.auth-container button, .login-container button {
+  padding: 10px 15px;
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.auth-container button:hover, .login-container button:hover {
+  background-color: darken(var(--button-background), 10%);
+}
+
+.login-container .error-message {
+  color: red;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.post-user, .comment-user {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.post-user img, .comment-user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.post-user button, .comment-user button {
+  margin-left: auto;
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.post-user button:hover, .comment-user button:hover {
+  background-color: darken(var(--button-background), 10%);
 }
 
 
